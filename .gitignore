@@ -1,0 +1,12 @@
+# 作業の残り・一時ファイル
+__pycache__/
+*.pyc
+app_1つ前.py
+*_1つ前.py
+
+# 個人の設定・ログイン情報・取り込んだ結果（ここには置かない）
+config.json
+サイト設定.json
+chrome_profile/
+成果物/
+.env

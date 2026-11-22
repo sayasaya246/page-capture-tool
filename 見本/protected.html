@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コピー禁止の見本</title>
+<style>
+body{margin:0;padding:56px 0 0;font-family:'Yu Gothic','Meiryo',sans-serif;color:#222;background:#f4f4f0;line-height:1.8}
+#fixed-menu{position:fixed;top:0;left:0;right:0;height:44px;background:#234;color:#fff;z-index:50;display:flex;gap:24px;align-items:center;padding:0 16px}
+#fixed-menu a{color:#fff;text-decoration:none}
+.ad{border:2px dashed #c60;background:#fff4e0;padding:14px;margin:12px auto;max-width:1000px;text-align:center;color:#a50}
+#wrap{max-width:1000px;margin:0 auto;display:flex;gap:20px;align-items:flex-start}
+main{flex:1;min-width:0}
+#main-article{background:#fff;padding:20px 28px;border-radius:6px}
+aside{width:240px}
+.side-card{background:#fff;border:1px solid #ccc;border-radius:6px;padding:12px;margin-bottom:12px;font-size:14px}
+#site-footer{margin-top:40px;background:#345;color:#cde;padding:24px;text-align:center;font-size:13px}
+table{border-collapse:collapse}th,td{border:1px solid #888;padding:4px 10px}
+.pager{margin:16px 0;display:flex;gap:10px}.pager a,.pager strong{padding:4px 12px;border:1px solid #888;border-radius:4px;text-decoration:none}
+.pager strong{background:#234;color:#fff}
+</style>
+<style>body,#main-article,#main-article *{-webkit-user-select:none;user-select:none}</style>
+</head>
+<body oncopy="return false" oncontextmenu="return false" onselectstart="return false">
+<nav id="fixed-menu"><strong>見本マガジン</strong><a href="#">ホーム</a><a href="#">カテゴリ</a><a href="#">お問い合わせ</a></nav>
+<div class="ad" id="ad-top">広告：ダミー商品がいまだけ30パーセント割引（これは見本の広告です）</div>
+<div id="wrap">
+<main>
+<article id="main-article">
+<h1>コピー禁止の見本ページ</h1>
+<p>この見本ページは、コピーを禁止する仕組みを持つ場合の動作を確かめるためのものです。</p>
+<p>本文のすべてに user-select:none が設定され、body には oncopy・oncontextmenu・onselectstart の禁止が書かれています。</p>
+<p>ここに書かれている文章はすべて見本用の自作です。</p>
+<p>文字を選ぶことも、右クリックのメニューを開くこともできない画面は、取り込まずに止めるのが正しい動きです。</p>
+</article>
+
+</main>
+<aside>
+<div class="side-card" id="side-profile"><h3>筆者について</h3><p>見本マガジン編集部のダミー紹介文です。本文とは関係ありません。</p></div>
+<div class="side-card" id="side-ranking"><h3>人気ランキング</h3><ol><li>ダミー記事その1</li><li>ダミー記事その2</li><li>ダミー記事その3</li></ol></div>
+<div class="ad" id="ad-side">広告：サイド用のダミーバナー</div>
+</aside>
+</div>
+<footer id="site-footer">&copy; 見本マガジン編集部（架空）　運営会社・プライバシー・利用規約（すべてダミーです）</footer>
+<script></script>
+</body>
+</html>

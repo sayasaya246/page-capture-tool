@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜の海辺</title>
+<style>
+body{margin:0;padding:56px 0 0;font-family:'Yu Gothic','Meiryo',sans-serif;color:#222;background:#f4f4f0;line-height:1.8}
+#fixed-menu{position:fixed;top:0;left:0;right:0;height:44px;background:#234;color:#fff;z-index:50;display:flex;gap:24px;align-items:center;padding:0 16px}
+#fixed-menu a{color:#fff;text-decoration:none}
+.ad{border:2px dashed #c60;background:#fff4e0;padding:14px;margin:12px auto;max-width:1000px;text-align:center;color:#a50}
+#wrap{max-width:1000px;margin:0 auto;display:flex;gap:20px;align-items:flex-start}
+main{flex:1;min-width:0}
+#main-article{background:#fff;padding:20px 28px;border-radius:6px}
+aside{width:240px}
+.side-card{background:#fff;border:1px solid #ccc;border-radius:6px;padding:12px;margin-bottom:12px;font-size:14px}
+#site-footer{margin-top:40px;background:#345;color:#cde;padding:24px;text-align:center;font-size:13px}
+table{border-collapse:collapse}th,td{border:1px solid #888;padding:4px 10px}
+.pager{margin:16px 0;display:flex;gap:10px}.pager a,.pager strong{padding:4px 12px;border:1px solid #888;border-radius:4px;text-decoration:none}
+.pager strong{background:#234;color:#fff}
+</style>
+<style>.chunk{min-height:900px}</style>
+</head>
+<body>
+<nav id="fixed-menu"><strong>見本マガジン</strong><a href="#">ホーム</a><a href="#">カテゴリ</a><a href="#">お問い合わせ</a></nav>
+<div class="ad" id="ad-top">広告：ダミー商品がいまだけ30パーセント割引（これは見本の広告です）</div>
+<div id="wrap">
+<main>
+<article id="main-article">
+<h1>夜の海辺の散歩</h1>
+<div id="stream"><section class="chunk"><p>夜の海辺は、昼間とはまるで別の場所のように静かです。</p><p>波の音だけが一定の間隔で寄せては返し、遠くの灯台がゆっくりと光っています。</p><p>靴を脱いで砂の上に立つと、昼の熱がまだ足の裏に残っていることに気づきます。</p></section></div>
+</article>
+
+</main>
+<aside>
+<div class="side-card" id="side-profile"><h3>筆者について</h3><p>見本マガジン編集部のダミー紹介文です。本文とは関係ありません。</p></div>
+<div class="side-card" id="side-ranking"><h3>人気ランキング</h3><ol><li>ダミー記事その1</li><li>ダミー記事その2</li><li>ダミー記事その3</li></ol></div>
+<div class="ad" id="ad-side">広告：サイド用のダミーバナー</div>
+</aside>
+</div>
+<footer id="site-footer">&copy; 見本マガジン編集部（架空）　運営会社・プライバシー・利用規約（すべてダミーです）</footer>
+<script>
+var rest=["<p>堤防の先まで歩くと、釣りをしている人の小さな明かりが並んでいます。</p><p>声をかけると、今夜はあまり釣れないけれど、それでも来るのが好きなのだと教えてくれました。</p>", "<p>空を見上げれば、雲の切れ間に星がいくつも見えます。</p><p>目が慣れてくるほど星の数が増え、いつのまにか時間を忘れて立ち尽くしていました。</p>", "<p>帰り道に自動販売機で温かい飲み物を買い、手のひらで包みながら歩きます。</p><p>缶の熱がゆっくり指先に伝わるあいだ、海の音は少しずつ後ろへ遠ざかっていきました。</p>"];var loading=false;var done=false;
+function nearBottom(){return window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-150;}
+window.addEventListener('scroll',function(){
+  if(loading||done||!nearBottom())return;
+  loading=true;
+  setTimeout(function(){
+    var box=document.getElementById('stream');
+    if(rest.length){var d=document.createElement('section');d.className='chunk';d.innerHTML=rest.shift();box.appendChild(d);}
+    if(!rest.length){var e=document.createElement('p');e.id='end-mark';e.textContent='これで終わり';box.appendChild(e);done=true;}
+    loading=false;
+  },250);
+});
+</script>
+</body>
+</html>

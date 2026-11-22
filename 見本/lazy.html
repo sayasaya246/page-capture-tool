@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>山あいの村</title>
+<style>
+body{margin:0;padding:56px 0 0;font-family:'Yu Gothic','Meiryo',sans-serif;color:#222;background:#f4f4f0;line-height:1.8}
+#fixed-menu{position:fixed;top:0;left:0;right:0;height:44px;background:#234;color:#fff;z-index:50;display:flex;gap:24px;align-items:center;padding:0 16px}
+#fixed-menu a{color:#fff;text-decoration:none}
+.ad{border:2px dashed #c60;background:#fff4e0;padding:14px;margin:12px auto;max-width:1000px;text-align:center;color:#a50}
+#wrap{max-width:1000px;margin:0 auto;display:flex;gap:20px;align-items:flex-start}
+main{flex:1;min-width:0}
+#main-article{background:#fff;padding:20px 28px;border-radius:6px}
+aside{width:240px}
+.side-card{background:#fff;border:1px solid #ccc;border-radius:6px;padding:12px;margin-bottom:12px;font-size:14px}
+#site-footer{margin-top:40px;background:#345;color:#cde;padding:24px;text-align:center;font-size:13px}
+table{border-collapse:collapse}th,td{border:1px solid #888;padding:4px 10px}
+.pager{margin:16px 0;display:flex;gap:10px}.pager a,.pager strong{padding:4px 12px;border:1px solid #888;border-radius:4px;text-decoration:none}
+.pager strong{background:#234;color:#fff}
+</style>
+<style>.lazy{min-height:800px}</style>
+</head>
+<body>
+<nav id="fixed-menu"><strong>見本マガジン</strong><a href="#">ホーム</a><a href="#">カテゴリ</a><a href="#">お問い合わせ</a></nav>
+<div class="ad" id="ad-top">広告：ダミー商品がいまだけ30パーセント割引（これは見本の広告です）</div>
+<div id="wrap">
+<main>
+<article id="main-article">
+<h1>山あいの村の一日</h1>
+<section class="lazy" data-idx="0"><h2>第一章　朝のひかり</h2><div class="lazy-body" data-text="山あいの村では、朝日が尾根を越えるまで、谷はまだ薄い青色のままです。">（読み込み中）</div></section><section class="lazy" data-idx="1"><h2>第二章　川のほとり</h2><div class="lazy-body" data-text="水車小屋のそばを流れる小川は、雪どけの季節になると、音を立てて水かさを増します。">（読み込み中）</div></section><section class="lazy" data-idx="2"><h2>第三章　昼のしごと</h2><div class="lazy-body" data-text="畑では、おじいさんが腰をのばしながら、ひとつずつ大根を引き抜いていました。">（読み込み中）</div></section><section class="lazy" data-idx="3"><h2>第四章　夕暮れの道</h2><div class="lazy-body" data-text="日が傾くと、家々の煙突から細い煙がのぼり、道にはのびた影がいくつも重なります。">（読み込み中）</div></section><section class="lazy" data-idx="4"><h2>第五章　夜のしずけさ</h2><div class="lazy-body" data-text="囲炉裏の火が小さくなるころ、村はすっかり眠りにつき、遠くで一度だけ犬が鳴きました。">（読み込み中）</div></section>
+</article>
+
+</main>
+<aside>
+<div class="side-card" id="side-profile"><h3>筆者について</h3><p>見本マガジン編集部のダミー紹介文です。本文とは関係ありません。</p></div>
+<div class="side-card" id="side-ranking"><h3>人気ランキング</h3><ol><li>ダミー記事その1</li><li>ダミー記事その2</li><li>ダミー記事その3</li></ol></div>
+<div class="ad" id="ad-side">広告：サイド用のダミーバナー</div>
+</aside>
+</div>
+<footer id="site-footer">&copy; 見本マガジン編集部（架空）　運営会社・プライバシー・利用規約（すべてダミーです）</footer>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){var b=e.target.querySelector('.lazy-body');
+    setTimeout(function(){b.innerHTML='<p>'+b.dataset.text+'</p>';b.dataset.loaded='1';},200);io.unobserve(e.target);}
+});},{rootMargin:'0px'});
+document.querySelectorAll('.lazy').forEach(function(s){io.observe(s);});
+</script>
+</body>
+</html>
