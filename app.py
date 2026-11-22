@@ -321,7 +321,7 @@ class App:
         K = self.root.winfo_fpixels("1i") / 96.0
         if "Yu Gothic UI" not in set(tkfont.families(self.root)) and "Meiryo UI" in set(tkfont.families(self.root)):
             FONT = "Meiryo UI"
-        self.root.title("画面PDF化アプリ")
+        self.root.title("ページ取り込みツール")
         self.root.resizable(False, True)
         self.busy = False
         self.mode = "start"        # start（取り込み）／teach（本文などを教える）／login（ログイン用）
@@ -374,7 +374,7 @@ class App:
         tb.grid(row=0, column=1, sticky="w")
         band.body.columnconfigure(0, weight=0)  # 既定では0列目が広がるので戻す
         band.body.columnconfigure(2, weight=1)  # 右に余白の列を作り、中身を左に寄せる
-        tk.Label(tb, text="画面PDF化アプリ", font=F(18, "bold"), bg=BAND, fg=TEXT).pack(anchor="w")
+        tk.Label(tb, text="ページ取り込みツール", font=F(18, "bold"), bg=BAND, fg=TEXT).pack(anchor="w")
         tk.Label(tb, text="気になるページを、読みやすいPDFにします。", font=F(9), bg=BAND, fg=SUB).pack(anchor="w")
 
         # 2. 1：URLを入れる
@@ -733,7 +733,7 @@ class App:
     def on_close(self):
         # 取り込み中に閉じても、専用ブラウザが残らないよう、止めてから閉じる
         if self.busy:
-            if not messagebox.askyesno("画面PDF化アプリ", "作業中です。止めて閉じますか？\n（取れた分は保存されます）"):
+            if not messagebox.askyesno("ページ取り込みツール", "作業中です。止めて閉じますか？\n（取れた分は保存されます）"):
                 return
             pipeline.request_stop()
             for _ in range(150):  # 最大15秒、後片付けを待つ
